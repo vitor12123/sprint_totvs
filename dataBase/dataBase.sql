@@ -21,8 +21,6 @@ create table conv (
 
 show databases;
 
-use totvs;
-
 show tables;
 
 show columns from clie;
