@@ -12,6 +12,7 @@ pesquisa = input("Digite o ID da reunião: ")
 texto = df["ANON_TRANSCRICAO"]
 id_texto = df["ID_MEETING"]
 
+
 if pesquisa in id_texto.values:
     print(texto[id_texto == pesquisa].values[0])
 else:
