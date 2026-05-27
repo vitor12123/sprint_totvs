@@ -1,7 +1,5 @@
 package com.sprint2.src.dataBase;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 public class GuardaInfo {
@@ -9,12 +7,14 @@ public class GuardaInfo {
     private String id_cliente;
     private int id_reuniao;
     private Date data_conversa;
+    private String transcricao;
 
-    public GuardaInfo(int id_conversa, String id_clie, int id_meet, Date dt_conv) {
+    public GuardaInfo(int id_conversa, String id_clie, int id_meet, Date dt_conv, String transcricao) {
         this.id_conversa = id_conversa;
         this.id_cliente = id_clie;
         this.id_reuniao = id_meet;
         this.data_conversa = dt_conv;
+        this.transcricao = transcricao;
     }
 
     public String getId_clie() {
@@ -31,5 +31,9 @@ public class GuardaInfo {
 
     public int getId_conversa() {
         return id_conversa;
+    }
+
+    public String getTranscricao() {
+        return transcricao;
     }
 }

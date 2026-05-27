@@ -1,5 +1,7 @@
 package com.sprint2.src.dataBase;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,26 +12,40 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.Scanner;
 
-@RestController
-public class filtro {
+public class Filtro {
 
     private int id_con ;
     private String id_cliente ;
     private int id_reuniao;
     private Date dt_conversa;
+    private String tr_conversa;
 
-    GuardaInfo infoPuxada = new GuardaInfo(id_con,id_cliente,id_reuniao,dt_conversa);
+    public int getId_con() {
+        return id_con;
+    }
 
-    @GetMapping("/filtro")
-    public String filtro() throws SQLException {
+    public String getId_cliente() {
+        return id_cliente;
+    }
 
-        Scanner input = new Scanner(System.in);
-        System.out.println("digite qual o id da conversa que vc deseja pegar: ");
+    public int getId_reuniao() {
+        return id_reuniao;
+    }
 
-        id_con = input.nextInt();
+    public Date getDt_conversa() {
+        return dt_conversa;
+    }
+
+    public String getTr_conversa() {
+        return tr_conversa;
+    }
+
+    public GuardaInfo filtrando(int id) throws SQLException {
+
+        id_con = id;
 
         Connection conecao = null;
-        String sql = String.format("SELECT * FROM conv WHERE id_meet = %s", id_con );
+        String sql = String.format("SELECT * FROM conv WHERE id_conv = %s", id_con );
 
         try {
             conecao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/totvs", "root", "vitor784!");
@@ -50,8 +66,7 @@ public class filtro {
                 id_cliente = id_clie;
                 id_reuniao = id_meet;
                 dt_conversa = dt_conv;
-
-                return ("\n id da conversa: \n" + id_conv + "\n id do cliente: \n" + id_clie + "\n id da ligação: \n" + id_meet + "\n data da conversa: \n" + dt_conv + "\n transcrição da conversa: \n" + tr_conv);
+                tr_conversa = tr_conv;
             }
 
         }
@@ -64,10 +79,9 @@ public class filtro {
             }
         }
 
+        GuardaInfo infoPuxada = new GuardaInfo(id_con,id_cliente,id_reuniao,dt_conversa,tr_conversa);
+        return infoPuxada;
 
-
-        return "deu BO";
     }
-
 
 }
