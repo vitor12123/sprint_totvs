@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.SQLException;
 
 @RestController
-public class teste {
+public class TextoCompleto {
 
     private Filtro info;
 
@@ -17,5 +17,9 @@ public class teste {
         info = new Filtro();
 
         return info.filtrando(id);
+    }
+
+    public String reuniaoCompleta(int id) throws SQLException {
+        return info.filtrando(id).getTranscricao();
     }
 }

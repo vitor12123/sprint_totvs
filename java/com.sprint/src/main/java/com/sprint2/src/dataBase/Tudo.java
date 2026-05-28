@@ -1,8 +1,5 @@
 package com.sprint2.src.dataBase;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -10,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
-@RestController
 public class Tudo {
 
     private int id_con ;
@@ -23,7 +19,6 @@ public class Tudo {
 
     ArrayList<Object> reunioes_id = new ArrayList<>();
 
-    @GetMapping("/puxar_tudo")
     public ArrayList puxa_tot() throws SQLException {
 
         Connection conecao = null;
