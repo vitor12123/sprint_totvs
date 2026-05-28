@@ -1,18 +1,16 @@
-import mysql.connector
+import pandas as pd
 
-conexao = mysql.connector.connect(
-    host="127.0.0.1",
-    port=3306,
-    user="root",
-    password="vitor784!",
-    database="totvs",
-    
+df = pd.read_csv('/home/tristeza/Documents/trabalho mae/sprint_java/sprint_totvs/final_limpo.csv')
+
+df["ID_MEETING"] = (
+    df["ID_MEETING"]
+    .str.replace('"', '')
+    .str.strip()
 )
 
-cursor = conexao.cursor()
+print(df["ID_MEETING"][5])
 
-cursor.execute("DESCRIBE conv")
-for coluna in cursor.fetchall():
-    print(coluna)
-
-
+for i in range(len(df)):    
+    print(str(df.iloc[i, 6]))
+    print(str(df.iloc[i, 14]))
+    print(str(df.iloc[i, 16]))
