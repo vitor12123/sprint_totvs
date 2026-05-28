@@ -20,6 +20,6 @@ public class TextoCompleto {
     }
 
     public String reuniaoCompleta(int id) throws SQLException {
-        return info.filtrando(id).getTranscricao();
+        return new Filtro().filtrando(id).getTranscricao();
     }
 }

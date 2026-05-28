@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,37 +17,35 @@ public class IAService {
 
     private static final String GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
 
-    public String perguntar(String mensagem) {
+    public Mono<String> perguntar(String mensagem) {
 
         WebClient client = WebClient.create();
 
         try{
-            Map<String,Object> normalizacaoMensagem= Map.of(
-            "contents", List.of(
-                "parts", List.of(
-                            Map.of("text",mensagem)
-                            )
+            Map<String,Object> normalizacaoMensagem = Map.of(
+                    "contents", List.of(
+                            Map.of("parts", List.of(
+                                    Map.of("text", mensagem)
+                            ))
                     )
             );
 
-            Map resposta = client.post()
+            return client.post()
                     .uri(GEMINI_URL + "?key=" + apiIA)
                     .header("Content-Type", "application/json")
                     .bodyValue(normalizacaoMensagem)
                     .retrieve()
                     .bodyToMono(Map.class)
-                    .block();
-
-
-            return extrairTexto(resposta);
+                    .map(resposta -> extrairTexto(resposta));
         }
         catch (Exception e){
-            return "Erro ao conectar com o Gemini: " + e.getMessage();
+            return Mono.just("Erro ao montar a requisição: " + e.getMessage());
         }
 
     }
 
     private String extrairTexto(Map resposta) {
+        if (resposta == null) return "Resposta vazia do Gemini.";
         try {
             List candidates = (List) resposta.get("candidates");
             Map candidate = (Map) candidates.get(0);
