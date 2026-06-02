@@ -24,7 +24,7 @@ public class Tudo {
         Connection conecao = null;
 
         try {
-            conecao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/totvs", "root", "vitor784!");
+            conecao = DriverManager.getConnection("jdbc:mysql://acela.proxy.rlwy.net/railway", "root", "URsFJvwawEyzhtFyGiBDinjmkhrovZpt");
             ResultSet puxarReuniao = conecao.createStatement().executeQuery("SELECT * FROM conv");
 
             long currentTimeMillis = 1622548800000L;

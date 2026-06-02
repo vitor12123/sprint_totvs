@@ -1,16 +1,10 @@
 package com.sprint2.src.dataBase;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
-import java.util.Scanner;
 
 public class Filtro {
 
@@ -48,7 +42,7 @@ public class Filtro {
         String sql = String.format("SELECT * FROM conv WHERE id_conv = %s", id_con );
 
         try {
-            conecao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/totvs", "root", "vitor784!");
+            conecao = DriverManager.getConnection("jdbc:mysql://acela.proxy.rlwy.net:59041/railway", "root", "URsFJvwawEyzhtFyGiBDinjmkhrovZpt");
             System.out.println(sql);
             ResultSet puxarReuniao = conecao.createStatement().executeQuery(sql);
 
@@ -57,10 +51,10 @@ public class Filtro {
 
             while (puxarReuniao.next()) {
                 int id_conv = puxarReuniao.getInt(1);
-                String id_clie = puxarReuniao.getString(2);
-                int id_meet = puxarReuniao.getInt(3);
-                Date dt_conv = puxarReuniao.getDate(4);
-                String tr_conv = puxarReuniao.getString(5);
+                String id_clie = puxarReuniao.getString(6);
+                int id_meet = puxarReuniao.getInt(2);
+                Date dt_conv = puxarReuniao.getDate(3);
+                String tr_conv = puxarReuniao.getString(4);
 
                 id_con = id_conv;
                 id_cliente = id_clie;
