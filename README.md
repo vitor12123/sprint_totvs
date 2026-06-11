@@ -1,6 +1,6 @@
 # sprint_totvs
 
-* Como usar *
+* Como usar 
 
   1. entre na pasta java
   2. faça esse caminho:
