@@ -1,6 +1,7 @@
 # sprint_totvs
 
-* Como usar 
+* Como usar
+- observação utilize o JDK 21
 
   1. entre na pasta java
   2. faça esse caminho:
