@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+
+    background-image: url("../public/fundo.png");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+#root {
+  width: 590px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 30rem;
+  text-align: center;
+  border-radius: 12px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  box-shadow: rgba(0,0,0,0.9) 0 10px 15px -3px, rgba(0,0,0,0.25) 0 4px 6px -2px;
+  background: #151722ce;
+}
