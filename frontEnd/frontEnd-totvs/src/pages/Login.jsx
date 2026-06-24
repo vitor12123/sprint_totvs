@@ -1,20 +1,35 @@
+import {useNavigate} from 'react-router-dom';
+
 export default function Login() {
+
+    let email;
+    let senha;
+    const navigate = useNavigate();
     
     function enviar(e) {
         e.preventDefault();
 
-        const email = e.target.email.value;
-        const senha = e.target.senha.value;
+        email = e.target.email.value;
+        senha = e.target.senha.value;
 
         console.log("email:", email);
         console.log("senha:", senha);
+
+        if (email == "vitorpallis@gmail.com" && senha == "123456") {
+            navigate("/home", {
+            state: {
+                email: email
+                }
+            });
+        }
     }
 
 
   return (
-    <div className="">
+    <div id="login">
 
-        <div className="bg-white w-96 h-auto rounded-2xl shadow-2xl p-8">
+        <div id="box">
+            <div className="bg-white w-96 h-auto rounded-2xl shadow-2xl p-8">
             <h1 className="text-3xl font-bold text-center text-gray-800 mb-2">
             Bem vindo
             </h1>
@@ -52,7 +67,8 @@ export default function Login() {
             </button>
             </form>
         </div>
-
+        </div>
+    
     </div>
   );
 }
