@@ -29,8 +29,8 @@ export default function Login() {
     <div id="login">
 
         <div id="box">
-            <div className="bg-white w-96 h-auto rounded-2xl shadow-2xl p-8">
-            <h1 className="text-3xl font-bold text-center text-gray-800 mb-2">
+            <div >
+            <h1>
             Bem vindo
             </h1>
             <p className="text-center text-gray-500 mb-8">
@@ -39,30 +39,30 @@ export default function Login() {
             <form
             id="form" onSubmit={enviar} >
             <div className="mb-4">
-                <label className="text-sm text-gray-600 block">
-                Email 
+                <label className="text-sm text-gray-600">
+                Email: 
                 </label>
                 <input
                 id="email"
                 type="email"
                 placeholder="seuEmail@gmail.com"
-                className="w-full mt-1 px-4 py-3 border rounded-xl outline-none focus:ring-2 focus:ring-indigo-500"
+                className="mt-1 px-4 py-3 border rounded-xl"
                 />
             </div>
             <div className="mb-6">
-                <label className="text-sm text-gray-600 block">
-                Senha
+                <label className="text-sm text-gray-600">
+                Senha:
                 </label>
                 <input
                 id="senha"
                 type="password"
                 placeholder="********"
-                className="w-full mt-1 px-4 py-3 border rounded-xl outline-none focus:ring-2 focus:ring-indigo-500"
+                className="mt-1 px-4 py-3 border rounded-xl outline-none focus:ring-2 focus:ring-indigo-500"
                 />
             </div>
             <button 
             id="entrar"
-            className="w-full bg-indigo-600 text-white py-3 rounded-xl font-semibold hover:bg-indigo-700 transition">
+            className="w-48 bg-indigo-600 text-white py-3 rounded-xl font-semibold hover:bg-indigo-700">
                 Entrar
             </button>
             </form>
