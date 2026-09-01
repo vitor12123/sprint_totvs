@@ -18,9 +18,10 @@ public class Prompt {
 
     public String pergunta() throws SQLException {
         return """
-               analise qual o assunto da chamada, veja tambem quais foram
-               os produtos citados da totvs e classifique se ele foi citado por algum problema,
-                se foi citado por algum problema diga qual o problema: """ + textoCompleto.reuniaoCompleta(1);
+               analize qual o problema retratado na reunião, 
+               diga se tem algum produto da TOTVS envolvido na chamada se sim diga qual, 
+               identifique possiveis riscos se houver algum,
+               e de uma solução para o problema, uma recomendação que tenha haver com algum produto da totvs""" + textoCompleto.reuniaoCompleta(1);
     }
 
     @GetMapping("/chat")
