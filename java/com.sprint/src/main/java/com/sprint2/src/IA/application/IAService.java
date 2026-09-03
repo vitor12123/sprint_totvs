@@ -1,4 +1,4 @@
-package com.sprint2.src.IA;
+package com.sprint2.src.IA.application;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.sprint2.src.dataBase;
+package com.sprint2.src.infraestrutura;
 
 import com.sprint2.src.cliente.domain.InfoCliente;
 import org.springframework.web.bind.annotation.RestController;

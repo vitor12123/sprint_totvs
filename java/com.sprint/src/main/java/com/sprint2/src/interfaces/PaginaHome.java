@@ -1,4 +1,4 @@
-package com.sprint2.src.cliente;
+package com.sprint2.src.interfaces;
 
 import com.sprint2.src.cliente.domain.InfoCliente;
 import com.sprint2.src.infraestrutura.Consulta;

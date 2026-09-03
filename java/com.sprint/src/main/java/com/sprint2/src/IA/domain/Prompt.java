@@ -1,5 +1,6 @@
-package com.sprint2.src.IA;
+package com.sprint2.src.IA.domain;
 
+import com.sprint2.src.IA.application.IAService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

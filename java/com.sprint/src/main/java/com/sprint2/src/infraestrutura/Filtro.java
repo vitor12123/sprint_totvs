@@ -1,4 +1,4 @@
-package com.sprint2.src.dataBase;
+package com.sprint2.src.infraestrutura;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
