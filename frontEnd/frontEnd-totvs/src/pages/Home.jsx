@@ -1,11 +1,25 @@
 import { useLocation } from "react-router-dom";
-import Header from "../components/Header";
-import Medidor from "../components/Medidor";
+import Header from "../components/home/Header";
+import Medidor from "../components/home/Medidor";
+import { useState } from "react";
 
 export default function Home() {
 
-    const location = useLocation();
-    const email = location.state?.email || "carlos@acme.com";
+    async function getEmail() {
+
+        const pergunta2 = await fetch(`${import.meta.env.VITE_BACKEND_URL}/pessoa`, {
+            method: "GET"
+        });
+
+        const resposta2 = await pergunta2.json();
+        
+        console.log(resposta2);
+
+    }
+    useEffect(() => {
+        getEmail();
+    }, []);
+
 
     return (
         <div className="min-h-screen bg-[#202B3A] text-white">
@@ -75,11 +89,11 @@ export default function Home() {
                     <section className="bg-[#496887] border border-[#6685A3] rounded-md p-9 mb-6 ml-3 mr-3 text-center">
 
                         <h2 className="text-4xl font-semibold">
-                            Carlos (CEO, Acme Corp.)
+                            Carlos ({}, ABCDEFGH corp.)
                         </h2>
 
                         <p className="text-lg text-gray-200">
-                            {email} | +55 11 99999-9999 | São Paulo
+                            {} | {} | São Paulo
                         </p>
 
                     </section>

@@ -18,10 +18,10 @@ public class Prompt {
 
     public String pergunta() throws SQLException {
         return """
-               analize qual o problema retratado na reunião, 
+               analize qual as dores retratadas na reunião em ate 120 caracteres, 
                diga se tem algum produto da TOTVS envolvido na chamada se sim diga qual, 
-               identifique possiveis riscos se houver algum,
-               e de uma solução para o problema, uma recomendação que tenha haver com algum produto da totvs""" + textoCompleto.reuniaoCompleta(1);
+               identifique possiveis riscos se houver algum em ate 120 caracteres,
+               e de uma solução para o problema, uma recomendação que tenha haver com algum produto da totvs em ate 350 caracteres""" + textoCompleto.reuniaoCompleta(1);
     }
 
     @GetMapping("/chat")

@@ -42,7 +42,7 @@ public class Filtro {
         String sql = String.format("SELECT * FROM conv WHERE id_conv = %s", id_con );
 
         try {
-            conecao = DriverManager.getConnection("jdbc:mysql://acela.proxy.rlwy.net:59041/railway", "root", "URsFJvwawEyzhtFyGiBDinjmkhrovZpt");
+            conecao = DriverManager.getConnection("127.0.0.1:3306", "root", "URsFJvwawEyzhtFyGiBDinjmkhrovZpt");
             System.out.println(sql);
             ResultSet puxarReuniao = conecao.createStatement().executeQuery(sql);
 

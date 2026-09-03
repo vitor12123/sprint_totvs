@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom';
+import ErrorAlert from '../components/login/ErroAlert';
 
 export default function Login() {
 
@@ -6,27 +7,31 @@ export default function Login() {
     let senha;
     const navigate = useNavigate();
     
-    function enviar(e) {
+    async function enviar(e) {
         e.preventDefault();
 
-        email = e.target.email.value;
-        senha = e.target.senha.value;
+        const pergunta = await fetch(`${import.meta.env.VITE_BACKEND_URL}/login`, {
+            method: "POST",
+            headers: {"content-type": "application/json"},
+            body: JSON.stringify({
+                email: e.target.email.value,
+                senha: e.target.senha.value
+            })
+        });
 
-        console.log("email:", email);
-        console.log("senha:", senha);
+        const resposta = await pergunta.text();
 
-        if (email == "vitorpallis@gmail.com" && senha == "123456") {
-            navigate("/home", {
-            state: {
-                email: email
-                }
-            });
+        if (resposta == "true") {
+            navigate("/home");
         }
+        else if (resposta == "false") {
+            document.getElementById("mensagem_erro").style.opacity = 1;
+        }
+
     }
 
-
   return (
-    <div id="login">
+    <div id="login" className="flex flex-col">
 
         <div id="box">
             <div >
@@ -68,6 +73,12 @@ export default function Login() {
             </form>
         </div>
         </div>
+
+        
+        <div id="mensagem_erro" className="text-center opacity-0">
+            <ErrorAlert />
+        </div>
+        
     
     </div>
   );

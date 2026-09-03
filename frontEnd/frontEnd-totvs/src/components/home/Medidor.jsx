@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function Medidor() {
-  const [angle, setAngle] = useState(43);
+  const [angle, setAngle] = useState(90);
 
   return (
     <div className="">

@@ -8,9 +8,10 @@ df["ID_MEETING"] = (
     .str.strip()
 )
 
-print(df["ID_MEETING"][5])
 
 for i in range(len(df)): 
+    print(str(df.iloc[i, 0]))
+    print(str(df.iloc[i, 1]))
     print(str(df.iloc[i, 3]))   
     print(str(df.iloc[i, 6]))
     print(str(df.iloc[i, 7]))
@@ -19,4 +20,5 @@ for i in range(len(df)):
     print(str(df.iloc[i, 12]))
     print(str(df.iloc[i, 14]))
     print(str(df.iloc[i, 15]))
+    print(str(df.iloc[i, 16]))
     print(str(df.iloc[i, 17]))
