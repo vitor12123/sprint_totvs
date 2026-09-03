@@ -77,6 +77,7 @@ public class Consulta extends InfoCliente {
                 listaLogin.add(puxarPessoa.getString(4));
                 System.out.println("2.2");
                 listaLogin.add(puxarPessoa.getString(5));
+                listaLogin.add(puxarPessoa.getString(6));
 
                 System.out.println("3");
             }
