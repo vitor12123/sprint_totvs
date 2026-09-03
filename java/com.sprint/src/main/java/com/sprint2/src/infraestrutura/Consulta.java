@@ -1,6 +1,6 @@
 package com.sprint2.src.dataBase;
 
-import com.sprint2.src.cliente.InfoCliente;
+import com.sprint2.src.cliente.domain.InfoCliente;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Connection;

@@ -1,7 +1,7 @@
 package com.sprint2.src.IA;
 
-import com.sprint2.src.dataBase.GuardaInfo;
-import com.sprint2.src.dataBase.Filtro;
+import com.sprint2.src.infraestrutura.GuardaInfo;
+import com.sprint2.src.infraestrutura.Filtro;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
