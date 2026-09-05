@@ -23,7 +23,7 @@ public class Prompt {
                diga se tem algum produto da TOTVS envolvido na chamada se sim diga qual, 
                identifique possiveis riscos se houver algum em ate 120 caracteres,
                e de uma solução para o problema, uma recomendação que tenha haver com algum produto da totvs em ate 350 caracteres,
-               retorne em formato json""" + textoCompleto.reuniaoCompleta(1);
+               retorne em formato json e não coloque '\n' no json""" + textoCompleto.reuniaoCompleta(1247082);
     }
 
     @GetMapping("/chat")

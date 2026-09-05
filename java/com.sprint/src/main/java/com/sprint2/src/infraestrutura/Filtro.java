@@ -10,7 +10,7 @@ public class Filtro {
 
     private int id_con ;
     private String id_cliente ;
-    private int id_reuniao;
+    private String nota_nps_reu;
     private Date dt_conversa;
     private String tr_conversa;
 
@@ -22,8 +22,8 @@ public class Filtro {
         return id_cliente;
     }
 
-    public int getId_reuniao() {
-        return id_reuniao;
+    public String getNota_nps() {
+        return nota_nps_reu;
     }
 
     public Date getDt_conversa() {
@@ -39,10 +39,10 @@ public class Filtro {
         id_con = id;
 
         Connection conecao = null;
-        String sql = String.format("SELECT * FROM conv WHERE id_conv = %s", id_con );
+        String sql = String.format("SELECT * FROM reuniao WHERE pk_reu = %s", id_con );
 
         try {
-            conecao = DriverManager.getConnection("127.0.0.1:3306", "root", "URsFJvwawEyzhtFyGiBDinjmkhrovZpt");
+            conecao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/teste1", "backend_sprint", "senha_do_backend");
             System.out.println(sql);
             ResultSet puxarReuniao = conecao.createStatement().executeQuery(sql);
 
@@ -51,14 +51,14 @@ public class Filtro {
 
             while (puxarReuniao.next()) {
                 int id_conv = puxarReuniao.getInt(1);
-                String id_clie = puxarReuniao.getString(6);
-                int id_meet = puxarReuniao.getInt(2);
-                Date dt_conv = puxarReuniao.getDate(3);
+                String id_clie = puxarReuniao.getString(2);
+                String nota_nps = puxarReuniao.getString(3);
+                Date dt_conv = puxarReuniao.getDate(5);
                 String tr_conv = puxarReuniao.getString(4);
 
                 id_con = id_conv;
                 id_cliente = id_clie;
-                id_reuniao = id_meet;
+                nota_nps_reu = nota_nps;
                 dt_conversa = dt_conv;
                 tr_conversa = tr_conv;
             }
@@ -73,7 +73,7 @@ public class Filtro {
             }
         }
 
-        GuardaInfo infoPuxada = new GuardaInfo(id_con,id_cliente,id_reuniao,dt_conversa,tr_conversa);
+        GuardaInfo infoPuxada = new GuardaInfo(id_con,id_cliente,nota_nps_reu,dt_conversa,tr_conversa);
         return infoPuxada;
 
     }

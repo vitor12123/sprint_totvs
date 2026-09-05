@@ -32,7 +32,7 @@ for i in range(len(df)):
 
         
         cursor.execute("""
-            INSERT INTO cliente (pk_reu, fk_pk_cli, nt_nps_reu, tr_reu, dt_reu)
+            INSERT INTO reuniao (pk_reu, fk_pk_cli, nt_nps_reu, tr_reu, dt_reu)
             VALUES (%s, %s, %s, %s, %s)
         """, (pk_reu, fk_pk_cli, nt_nps_reu, tr_reu, dt_reu))
         
