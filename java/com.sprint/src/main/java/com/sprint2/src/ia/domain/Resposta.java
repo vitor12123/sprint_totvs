@@ -1,4 +1,4 @@
-package com.sprint2.src.IA.domain;
+package com.sprint2.src.ia.domain;
 
 public class Resposta {
 
