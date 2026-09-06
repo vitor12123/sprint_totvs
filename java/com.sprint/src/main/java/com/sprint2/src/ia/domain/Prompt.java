@@ -23,16 +23,16 @@ public class Prompt {
                diga se tem algum produto da TOTVS envolvido na chamada se sim diga qual, 
                identifique possiveis riscos se houver algum em ate 120 caracteres,
                e de uma solução para o problema, uma recomendação que tenha haver com algum produto da totvs em ate 350 caracteres,
-               retorne em formato json e não coloque '\n' no json""" + textoCompleto.reuniaoCompleta(1247082);
+               retorne em formato json""" + textoCompleto.reuniaoCompleta(1247082);
     }
 
-    @GetMapping("/chat")
-    public Mono<Resposta> chat() throws SQLException {
+    //@GetMapping("/chat")
+    //public Mono<Resposta> chat() throws SQLException {
 
-        String mensagem = this.pergunta();
+      //  String mensagem = this.pergunta();
 
-        return iaService.perguntar(mensagem)
-                .map(respostaIA -> new Resposta(respostaIA));
-    }
+       // return iaService.perguntar(mensagem)
+       //         .map(respostaIA -> new Resposta(respostaIA));
+    //}
 }
 
