@@ -1,23 +1,13 @@
 package com.sprint2.src.ia.domain;
 
-import com.sprint2.src.infraestrutura.GuardaInfo;
 import com.sprint2.src.infraestrutura.Filtro;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.SQLException;
 
-@RestController
+@Component
 public class TextoCompleto {
-
-    private Filtro info;
-
-    @GetMapping("/definir/{id}")
-    public GuardaInfo definir(@PathVariable int id) throws SQLException {
-
-        info = new Filtro();
-
-        return info.filtrando(id);
-    }
 
     public String reuniaoCompleta(int id) throws SQLException {
         return new Filtro().filtrando(id).getTranscricao();

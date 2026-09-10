@@ -15,7 +15,7 @@ public class IAService {
     @Value("${gemini.api.key}")
     private String apiIA;
 
-    private static final String GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
+    private static final String GEMINI_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash-lite:generateContent";
 
     public Mono<String> perguntar(String mensagem) {
 

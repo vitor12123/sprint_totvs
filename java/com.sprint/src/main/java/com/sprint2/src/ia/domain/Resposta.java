@@ -1,20 +1,15 @@
 package com.sprint2.src.ia.domain;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
 
-import java.io.IOException;
+public class Resposta extends Prompt{
 
-@RestController
-public class Resposta {
+    private String resposta ;
 
-    private String resposta;
-
-     public void setResposta(String resposta){
+     public Resposta(String resposta){
         this.resposta = resposta;
      }
 
-    @GetMapping("/resposta")
     public String getResposta() {
         return resposta;
     }
