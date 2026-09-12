@@ -34,9 +34,7 @@ export default function Home() {
 
     return (
         <div className="min-h-screen bg-[#202B3A] text-white">
-
             <Header />
-
             <div className="flex">
 
                 {/* SIDEBAR */}

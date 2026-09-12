@@ -69,17 +69,14 @@ public class Consulta extends InfoCliente {
             conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/teste1", "backend_sprint", "senha_do_backend");
             ResultSet puxarPessoa = conexao.createStatement().executeQuery(sql);
 
-            System.out.println("2");
 
             if(puxarPessoa.next()){
                 listaLogin.add(puxarPessoa.getString(2));
-                System.out.println("2.1");
+                System.out.println("2");
                 listaLogin.add(puxarPessoa.getString(4));
-                System.out.println("2.2");
                 listaLogin.add(puxarPessoa.getString(5));
                 listaLogin.add(puxarPessoa.getString(6));
 
-                System.out.println("3");
             }
 
         }

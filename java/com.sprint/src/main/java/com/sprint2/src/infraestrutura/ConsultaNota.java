@@ -11,9 +11,17 @@ import java.util.ArrayList;
 
 public class ConsultaNota {
 
-    static ArrayList<Integer> listaNotas = new ArrayList<>();
+    private static ArrayList<Integer> listaNotas = new ArrayList<>();
 
-    public static ArrayList<Integer> ConsultaMediaNT() throws SQLException {
+    public static ArrayList<Integer> getListaNotas() {
+        return listaNotas;
+    }
+
+    public static void setListaNotas(int listaNotas) {
+        ConsultaNota.listaNotas.add(listaNotas);
+    }
+
+    public static ArrayList<Integer> consultaMediaNT() throws SQLException {
 
         Connection conexao = null;
         String sql = String.format("SELECT * FROM reuniao WHERE nt_nps_reu != '%s'","");
@@ -26,7 +34,7 @@ public class ConsultaNota {
 
             while(puxarNota.next()) {
                 transformar = Integer.parseInt(puxarNota.getString(3));
-                listaNotas.add(transformar);
+                setListaNotas(transformar);
             }
 
 
