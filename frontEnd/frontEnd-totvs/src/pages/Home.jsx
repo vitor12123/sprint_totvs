@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import Header from "../components/home/Header";
 import Medidor from "../components/home/Medidor";
+import SideBar from "../components/home/SideBar";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -39,44 +40,9 @@ export default function Home() {
             <div className="flex">
 
                 {/* SIDEBAR */}
-                <aside className="w-56 min-h-[calc(100vh-48px)] bg-[#263343] border-r border-[#3B4654]">
-
-                    <nav className="flex flex-col">
-
-                        <button className="px-3 py-4 text-xl text-gray-300 hover:bg-[#344255]">
-                            ♙
-                            <br />
-                            Contacts
-                        </button>
-
-                        <button className="px-3 py-4 text-xl text-gray-300 hover:bg-[#344255]">
-                            ▣
-                            <br />
-                            Companies
-                        </button>
-
-                        <button className="px-3 py-4 text-xl text-gray-300 hover:bg-[#344255]">
-                            ♙
-                            <br />
-                            Client
-                        </button>
-
-                        <button className="px-3 py-4 text-xl text-gray-300 hover:bg-[#344255]">
-                            ▥
-                            <br />
-                            Analytics
-                        </button>
-
-                        <button className="px-3 py-4 text-xl text-gray-300 hover:bg-[#344255]">
-                            ⚙
-                            <br />
-                            Settings
-                        </button>
-
-                    </nav>
-
-                </aside>
-
+                <div>
+                    <SideBar />
+                </div>
 
                 {/* CONTEÚDO */}
                 <main className="flex-1 p-3">
