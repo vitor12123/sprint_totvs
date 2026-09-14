@@ -14,7 +14,7 @@ public class InfoCliente {
     }
 
     public static String getEmail() {
-        return email;
+        return  email;
     }
 
     public String getSenha() {
