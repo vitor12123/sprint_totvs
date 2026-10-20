@@ -49,11 +49,11 @@ export default function Home() {
                     <div className="mb-2">
 
                         <h1 className="text-3xl font-bold">
-                            Client Detail View
+                            Administrator menu
                         </h1>
 
                         <p className="text-md text-gray-400">
-                            Nexus &gt; Clients &gt; {nome}
+                            Nexus &gt; Menu &gt; {nome}
                         </p>
 
                     </div>

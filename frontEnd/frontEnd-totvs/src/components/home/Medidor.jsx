@@ -1,7 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Medidor() {
-  const [angle, setAngle] = useState(68);
+  const [dados, setDados] = useState([]);
+
+  useEffect(() => {
+        fetch("http://localhost:8080/home/medidor")
+            .then((resposta) => {
+                if (!resposta.ok) {
+                    throw new Error("Erro ao buscar os dados");
+                } 
+                return resposta.json();
+            })
+            .then((dadosRecebidos) => {
+                setDados(dadosRecebidos);
+            })
+            .catch((erro) => {
+                console.error("Erro:", erro);
+            });
+    }, []);
+
+    let notaMediaClientes = 0;
+
+    let listaNumerica = [0,10,10];
+
+    for(let numero in dados){
+        let transforma = parseFloat(dados[numero], 10)
+
+        listaNumerica.push(listaNumerica[numero])
+
+        notaMediaClientes += listaNumerica[numero];
+    }
+
+    notaMediaClientes = notaMediaClientes / listaNumerica.length
+
+    let angle = notaMediaClientes 
 
   return (
     <div className="">
@@ -21,7 +53,7 @@ function Medidor() {
                     <div
                     className="absolute bottom-0 left-1/2 w-1 h-[120px] bg-gray-800 rounded-t z-10 transition-transform duration-300 ease-in-out"
                     style={{
-                        transform: `translateX(-50%) rotate(${angle}deg)`,
+                        transform: `translateX(-50%) rotate(${((angle * 36) - 180)/ 2}deg)`,
                         transformOrigin: 'bottom center',
                     }}
                     >
@@ -35,7 +67,7 @@ function Medidor() {
         </div>
 
         <p className="text-lg text-gray-400 mt-15 ml-[-6%]">
-            Overall Sentiment: High Satisfaction ({Math.floor(((angle + 90) * 56) / 100 )} %)
+            Overall Sentiment: High Satisfaction ({parseInt(angle * 10)} %)
             -
             Source: Meeting Transcripts & Emails
         </p>

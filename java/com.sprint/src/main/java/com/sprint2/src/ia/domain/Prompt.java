@@ -21,7 +21,8 @@ public class Prompt {
                diga se tem algum produto da TOTVS envolvido na chamada se sim diga qual, 
                identifique possiveis riscos se houver algum em ate 120 caracteres,
                e de uma solução para o problema em ate 300, uma recomendação que tenha haver com algum produto da totvs em ate 100 caracteres,
-               retorne em formato json, sendo o item 1 nomeado: dores. Item 2: produto. Item 3: risco. Item 4: recomendacao, segue o texto: """ + textoCompleto.reuniaoCompleta(835960);
+               retorne em formato json, sendo o item 1 nomeado: dores. Item 2: produto. Item 3: risco. Item 4: solucao, e enumere o grau de urgencia de acordo com as 
+               dores da reunião de 0 a 10, esse dado deve ser sempre um numero float com no maximo 2 casas decimais de 0 a 10 (item 5: grau_urgencia), segue o texto: """ + textoCompleto.reuniaoCompleta(835960);
     }
 
     public String chat() throws SQLException {
