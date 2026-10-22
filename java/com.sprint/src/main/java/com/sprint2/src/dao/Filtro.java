@@ -1,4 +1,6 @@
-package com.sprint2.src.infraestrutura;
+package com.sprint2.src.dao;
+
+import com.sprint2.src.domain.model.GuardaInfo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

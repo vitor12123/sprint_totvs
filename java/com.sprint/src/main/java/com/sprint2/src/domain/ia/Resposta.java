@@ -1,8 +1,8 @@
-package com.sprint2.src.ia.domain;
+package com.sprint2.src.domain.ia;
 
-import reactor.core.publisher.Mono;
+import com.sprint2.src.ia.domain.Prompt;
 
-public class Resposta extends Prompt{
+public class Resposta extends Prompt {
 
     private String resposta ;
 

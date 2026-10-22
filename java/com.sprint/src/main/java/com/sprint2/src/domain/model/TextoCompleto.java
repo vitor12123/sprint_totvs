@@ -1,6 +1,6 @@
-package com.sprint2.src.ia.domain;
+package com.sprint2.src.domain.model;
 
-import com.sprint2.src.DAO.Filtro;
+import com.sprint2.src.dao.Filtro;
 import org.springframework.stereotype.Component;
 
 import java.sql.SQLException;

@@ -1,7 +1,7 @@
 package com.sprint2.src.interfaces;
 
-import com.sprint2.src.cliente.domain.InfoCliente;
-import com.sprint2.src.infraestrutura.Consulta;
+import com.sprint2.src.domain.cliente.InfoCliente;
+import com.sprint2.src.dao.Consulta;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;

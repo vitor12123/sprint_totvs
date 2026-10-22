@@ -1,7 +1,4 @@
-package com.sprint2.src.infraestrutura;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+package com.sprint2.src.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

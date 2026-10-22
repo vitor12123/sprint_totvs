@@ -1,4 +1,4 @@
-package com.sprint2.src.cliente.domain;
+package com.sprint2.src.domain.cliente;
 
 public class InfoCliente {
 

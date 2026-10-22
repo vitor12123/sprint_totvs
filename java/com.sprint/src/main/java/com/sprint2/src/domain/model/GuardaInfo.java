@@ -1,4 +1,4 @@
-package com.sprint2.src.DAO;
+package com.sprint2.src.domain.model;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.sprint2.src.infraestrutura;
+package com.sprint2.src.dao;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,7 +1,7 @@
 package com.sprint2.src;
 
-import com.sprint2.src.infraestrutura.Filtro;
-import com.sprint2.src.infraestrutura.GuardaInfo;
+import com.sprint2.src.dao.Filtro;
+import com.sprint2.src.domain.model.GuardaInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

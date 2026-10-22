@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;
@@ -32,7 +33,9 @@ public class IAService {
                             Map.of("parts", List.of(
                                     Map.of("text", mensagem)
                             ))
-                    )
+                    ),
+                    // Obriga o Gemini a responder só com JSON (sem ```json, sem texto antes/depois)
+                    "generationConfig", Map.of("responseMimeType", "application/json")
             );
 
             return client.post()
@@ -41,7 +44,9 @@ public class IAService {
                     .bodyValue(normalizacaoMensagem)
                     .retrieve()
                     .bodyToMono(Map.class)
-                    .map(resposta -> extrairTexto(resposta));
+                    .map(resposta -> extrairTexto(resposta))
+                    .doOnError(WebClientResponseException.class, e ->
+                            System.out.println("Erro do Gemini: " + e.getResponseBodyAsString()));
 
         } catch (Exception e) {
             return Mono.just("Erro ao montar a requisição: " + e.getMessage());
