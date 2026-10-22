@@ -1,4 +1,4 @@
-package com.sprint2.src.infraestrutura;
+package com.sprint2.src.DAO;
 
 import java.util.Date;
 

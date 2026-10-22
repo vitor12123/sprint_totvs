@@ -1,7 +1,6 @@
 package com.sprint2.src.ia.domain;
 
-import com.sprint2.src.infraestrutura.Filtro;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.sprint2.src.DAO.Filtro;
 import org.springframework.stereotype.Component;
 
 import java.sql.SQLException;
