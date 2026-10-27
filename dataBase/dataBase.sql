@@ -57,6 +57,8 @@ alter table reuniao modify fk_pk_cli varchar(7) not null;
 alter table usuario modify pk_usu int auto_increment;
 alter table usuario add nome varchar(15);
 alter table usuario CHANGE COLUMN nome nm_usu varchar(15);
+alter table cliente modify fax_fat_cli varchar(85);
+ALTER TABLE relatorio_ia MODIFY COLUMN rs_rel VARCHAR(200);
 
 show tables;
 
