@@ -35,6 +35,11 @@ for i in range(len(df)):
             INSERT INTO reuniao (pk_reu, fk_pk_cli, nt_nps_reu, tr_reu, dt_reu)
             VALUES (%s, %s, %s, %s, %s)
         """, (pk_reu, fk_pk_cli, nt_nps_reu, tr_reu, dt_reu))
+
+        cursor.execute("""
+                INSERT INTO cliente (pk_cli, dt_ultpes_cli, fax_fat_cli, nm_seg_cli)
+                VALUES (%s, %s, %s, %s)
+            """, (pk_cli, dt_ultpes_cli, fax_fat_cli, nm_seg_cli))
         
     except Exception as e:
         print(f"Erro na linha {i}: {e}")
